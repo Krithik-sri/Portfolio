@@ -1,11 +1,7 @@
-# **WriteUp 📝✨**  
-
-![WriteUp Banner](src/assets/home-update-banner.png)
+# **Portfolio✨**
 
 ## 🚀 **About the Project**  
-**WriteUp** is a dynamic blog platform where users can create, share, and view technical blogs 📚. It features **syntax-highlighted code snippets** 🎨 powered by **PrismJS**, with smooth animations from **Framer Motion** and a responsive design using **Tailwind CSS**. 🌌
-
-This project is built with **React (Vite)** and offers a **dark mode UI** for a sleek developer experience. It’s modular, extendable, and perfect for documenting your coding journey! 💻
+**Portfolio** is a project built with **React (Vite)** and offers a **dark mode UI** for a sleek developer experience. It’s modular, extendable, and perfect for documenting your coding journey! 💻
 
 ---
 
@@ -24,8 +20,6 @@ writeup/
 │   │
 │   ├── pages/              # Route-based pages
 │   │   ├── Home.jsx        # Displays list of blogs
-│   │   ├── BlogPage.jsx    # Individual blog page with code snippet & explanation
-│   │   └── NewBlogForm.jsx # Form to create new blogs
 │   │
 │   ├── App.jsx             # Root component with routes
 │   ├── index.css           # Global styles (Tailwind CSS)
@@ -109,19 +103,6 @@ Open [http://localhost:5173](http://localhost:5173) 🌐
 
 ---
 
-## 🖼️ **Screenshots**
-
-1. **Home Page (Blog List)**  
-![Home Page](src/assets/home.png)
-
-2. **Create Blog Form**  
-![Create Blog](src/assets/blog-form-banner.png)
-
-3. **Blog with Code Snippet**  
-![Blog with Code Snippet](src/assets/blog-banner.png)
-
----
-
 ## 👨‍💻 **Contributing**
 
 Contributions are welcome! 🎉  
@@ -131,16 +112,14 @@ Feel free to **fork** this repository and submit a **pull request**. Let's make 
 
 ## 🌐 **Socials**
 
-- **GitHub**: [johnwesley755](https://github.com/johnwesley755)  
-- **LinkedIn**: [John Wesley](https://linkedin.com/in/john-wesley-6707ab258/)  
-- **Twitter**: [@JohnWesley97513](https://twitter.com/JohnWesley97513)  
+- **GitHub**: [johnwesley755](https://github.com/Krithik-sri)  
+- **LinkedIn**: [John Wesley](www.linkedin.com/in/krithik-srinivas)  
 
 ---
 
 ## 🛡️ **Upcoming Features**  
-- **Search and Filter Blogs** 🔍  
-- **Dark/Light Theme Toggle** 🌗  
-- **User Authentication** 🔑
+- **Dark/Light Theme Toggle**
+- **Detailed Project Description**
 
 ---
 
@@ -152,6 +131,6 @@ Thanks to all the amazing open-source libraries and tools used in this project! 
 
 ## 🎯 **Project Status**
 
-WriteUp is under active development! Stay tuned for updates and new features 🚀.
+Portfolio is under active development! Stay tuned for updates and new features 🚀.
 
 ---
