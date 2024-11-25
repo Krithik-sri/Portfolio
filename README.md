@@ -112,8 +112,8 @@ Feel free to **fork** this repository and submit a **pull request**. Let's make 
 
 ## 🌐 **Socials**
 
-- **GitHub**: [johnwesley755](https://github.com/Krithik-sri)  
-- **LinkedIn**: [John Wesley](www.linkedin.com/in/krithik-srinivas)  
+- **GitHub**: [Krithik-sri](https://github.com/Krithik-sri)  
+- **LinkedIn**: [Krithik Srinivas](www.linkedin.com/in/krithik-srinivas)  
 
 ---
 
