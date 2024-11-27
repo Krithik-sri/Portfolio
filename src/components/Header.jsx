@@ -3,8 +3,13 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { FaBars } from "react-icons/fa";
 import { motion } from "framer-motion";
+import resumePdf from "../assets/Profile.pdf";
 
 const Header = () => {
+  const handleDownloadResume = () => {
+    const resumeUrl = resumePdf;
+    window.open(resumeUrl, "_blank");
+  };
   const [isSidebarOpen, setSidebarOpen] = useState(false);
 
   const toggleSidebar = () => setSidebarOpen(!isSidebarOpen);
@@ -17,7 +22,7 @@ const Header = () => {
       <header className="bg-gray-900 text-white font-bold fixed w-full z-20 shadow-lg">
         <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
           <motion.h1
-            className="text-4xl max-sm:text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-pink-500"
+            className="text-4xl max-sm:text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-green-500"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -32,6 +37,12 @@ const Header = () => {
             >
               Portfolio
             </Link>
+            <Link
+              className="hover:text-yellow-400 transition-all duration-300"
+              onClick={handleDownloadResume}
+              >
+                Resume
+              </Link>
             {/* <Link
               to="/contact"
               className="hover:text-yellow-400 transition-all duration-300"

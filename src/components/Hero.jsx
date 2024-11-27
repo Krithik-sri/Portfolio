@@ -37,7 +37,7 @@ const Hero = () => {
       >
         {/* Typewriter Effect */}
         <Typewriter
-          words={["Cybersecurity", "Artificial Intelligence", "Pre-Final Year Student"]}
+          words={["Cybersecurity","Software Development", "Artificial Intelligence"]}
           loop={false}
           cursor
           cursorStyle="|"
