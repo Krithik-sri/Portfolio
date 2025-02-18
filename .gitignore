@@ -1,0 +1,5 @@
+/.env
+/.env.example
+/.next
+/LICENSE
+/node_modules
