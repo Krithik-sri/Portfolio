@@ -81,8 +81,8 @@ const about = {
     title: "Introduction",
     description: (
       <>
-       I am a passionate Full Stack Developer and Cybersecurity Enthusiast with fundamental knowledge in AI and cloud computing. With hands-on experience in building scalable web applications and chatbots,
-      I specialize in Next.js, React, TypeScript, MongoDB, and AWS.
+       I am a passionate Full Stack Developer and Cybersecurity Enthusiast with fundamental knowledge in AI and cloud computing. With hands-on experience in building scalable web applications, chatbots and fundamental knowledge of Cloud Platforms.
+      I specialize in Next.js, React, TypeScript, MongoDB and PostgreSQL.
       </>
     ),
   },
@@ -97,10 +97,10 @@ const about = {
         achievements: [
           <>
             Internal Management System for Southern Railways 
-                – Collaborated with a team to develop a robust system to streamline railway operations, improving efficiency, data management, and workflow automation for better decision-making.
+                – Collaborated with my team to develop a robust system to streamline railway operations, improving efficiency, data management, and workflow automation for better decision-making.
           </>,
           <>
-            AI-Powered Chatbot Deployment Platform – Worked on a platform that allows businesses to deploy trained chatbots on their websites. This solution enhanced customer engagement, automated support, and reduced response times, providing businesses with a scalable AI-driven support system.
+            AI-Powered Chatbot Deployment Platform – Worked on a platform that allows businesses to train a chatbot using their website and sources they may provide and integrate deployed chatbots into their websites seamlessly. This solution enhanced customer engagement, automated support, and reduced response times, providing businesses with a scalable AI-driven support system.
           </>,
         ],
         images: [
