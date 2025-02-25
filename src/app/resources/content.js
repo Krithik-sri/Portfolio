@@ -142,7 +142,7 @@ const about = {
     skills: [
       {
         title: "Full Stack Development",
-        description: <>Next.js, TypeScript, TailwindCSS, Node.js, Express, TRPC, MongoDB, PostgreSQL | Built fast, responsive, and scalable UI and developed secure and high-performance APIs</>,
+        description: <>Next.js, TypeScript, TailwindCSS, Node.js, Express, MongoDB, PostgreSQL | Built fast, responsive, and scalable UI and developed secure and high-performance APIs</>,
         // optional: leave the array empty if you don't want to display images
         images: [
           // {
