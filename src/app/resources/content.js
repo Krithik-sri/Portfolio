@@ -6,7 +6,7 @@ const person = {
   get name() {
     return `${this.firstName} ${this.lastName}`;
   },
-  role: "Full Stack Developer",
+  role: "Full Stack Developer (Backend & DevOps)",
   avatar: "/images/avatar.png",
   location: "Asia/Kolkata", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
   languages: [], // optional: Leave the array empty if you don't want to display languages
@@ -55,8 +55,8 @@ const home = {
   headline: <>Full Stack Developer</>,
   subline: (
     <>
-      I'm Krithik, a Full Stack Developer,<InlineCode></InlineCode> I craft intuitive
-      <br /> user experiences. After hours, I build my own projects with a special enthusiasm for cybersecurity.
+      I'm Krithik, a Full Stack Developer, I craft robust
+      <br /> backends. After hours, I build my own projects with a special enthusiasm for low level programming <InlineCode>Rust</InlineCode> (still exploring ofc).
     </>
   ),
 };
@@ -81,8 +81,7 @@ const about = {
     title: "Introduction",
     description: (
       <>
-       I am a passionate Full Stack Developer and Cybersecurity Enthusiast with fundamental knowledge in AI and cloud computing. With hands-on experience in building scalable web applications, chatbots and fundamental knowledge of Cloud Platforms.
-      I specialize in Next.js, React, TypeScript, MongoDB and PostgreSQL.
+        Full Stack Developer with hands-on experience across backend and DevOps. I design and build scalable APIs and services (Nest.js, Node.js) and ship production web apps (Next.js, React, TypeScript). Comfortable working with PostgreSQL and MongoDB, and deploying via Docker. Experienced with AWS/GCP and local cloud emulation using LocalStack to enable portable deployments.
       </>
     ),
   },
@@ -91,27 +90,24 @@ const about = {
     title: "Work Experience",
     experiences: [
       {
-        company: "ADRIG AI TECHNOLOGIES",
-        timeframe: "December 2024 - March 2025",
-        role: "Full Stack Developer",
+        company: "Authenta (Phosphene.ai)",
+        timeframe: "March 2025 - Present",
+        role: "Full Stack Developer Intern",
         achievements: [
-          <>
-            Internal Management System for Southern Railways 
-                – Collaborated with my team to develop a robust system to streamline railway operations, improving efficiency, data management, and workflow automation for better decision-making.
-          </>,
-          <>
-            AI-Powered Chatbot Deployment Platform – Worked on a platform that allows businesses to train a chatbot using their website and sources they may provide and integrate deployed chatbots into their websites seamlessly. This solution enhanced customer engagement, automated support, and reduced response times, providing businesses with a scalable AI-driven support system.
-          </>,
+          <>Primary focus on backend development using Nest.js with modular architecture and dependency injection to build scalable services.</>,
+          <>Contributed to DevOps: authored Docker configurations and integrated LocalStack to emulate AWS, enabling portable, client-side deployments without cloud dependency.</>,
         ],
-        images: [
-          // // optional: leave the array empty if you don't want to display images
-          // {
-          //   src: "/images/projects/project-01/cover-01.jpg",
-          //   alt: "Once UI Project",
-          //   width: 16,
-          //   height: 9,
-          // },
+        images: [],
+      },
+      {
+        company: "Adrig AI Technologies",
+        timeframe: "December 2024 - March 2025",
+        role: "Full Stack Developer Intern",
+        achievements: [
+          <>Worked on production-grade solutions, including a large-scale internal management system for Southern Railways of India to streamline operations, data, and workflows.</>,
+          <>Built an AI chatbot deployment platform to train on customer-provided sources and embed into websites, improving engagement and support efficiency.</>,
         ],
+        images: [],
       },
       {
         company: "Valeo",
@@ -132,7 +128,7 @@ const about = {
     institutions: [
       {
         name: "St. Joseph's Institute of Technology",
-        description: <>B.Tech in Artifical Intelligence and Data Science</>,
+        description: <>B.Tech in Artificial Intelligence and Data Science — Expected August 2026</>,
       },
     ],
   },
@@ -142,7 +138,7 @@ const about = {
     skills: [
       {
         title: "Full Stack Development",
-        description: <>Next.js, TypeScript, TailwindCSS, Node.js, Express, MongoDB, PostgreSQL | Built fast, responsive, and scalable UI and developed secure and high-performance APIs</>,
+        description: <>Next.js, React, TypeScript, Node.js, Nest.js, Express, PostgreSQL, MongoDB — Built robust frontends, secure backends and high-performance APIs</>,
         // optional: leave the array empty if you don't want to display images
         images: [
           // {
@@ -161,7 +157,7 @@ const about = {
       },
       {
         title: "Cybersecurity & SOC",
-        description: <>SOC Analysis, Threat Detection, Jira Ticketing - Worked with security teams to investigate and respond to threats</>,
+        description: <>SOC analysis, threat detection, incident triage. Exposure to ticketing workflows and response processes.</>,
         // optional: leave the array empty if you don't want to display images
         images: [
           // {
@@ -179,8 +175,8 @@ const about = {
         ],
       },
       {
-        title: "Other Technical Skills",
-        description: <>Git, GitHub, Agile Methodologies - Collaborated effectively in team environments</>,
+        title: "Backend & DevOps",
+        description: <>Docker, LocalStack, AWS, GCP — Containerized services and emulated cloud dependencies locally for portable deployments</>,
         // optional: leave the array empty if you don't want to display images
         images: [
           // {
