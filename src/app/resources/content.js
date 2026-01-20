@@ -55,7 +55,7 @@ const home = {
   headline: <>Full Stack Developer</>,
   subline: (
     <>
-      I'm Krithik, a Full Stack Developer, I craft robust
+      I'm Krithik, I craft robust
       <br /> backends. After hours, I build my own projects with a special enthusiasm for low level programming <InlineCode>Rust</InlineCode> (still exploring ofc).
     </>
   ),
