@@ -90,12 +90,24 @@ const about = {
     title: "Work Experience",
     experiences: [
       {
+        company: "C1X",
+        timeframe: "December 2025 - March 2026",
+        role: "Software Engineer (Intern)",
+        achievements: [
+          <>Engineered end to end Microsoft ecosystem integration using OAuth 2.0 and webhook driven architecture.</>,
+          <>Architected real time data synchronization pipelines, providing up to date data.</>,
+          <>Authored comprehensive technical documentation and system flow diagrams, enhancing cross-team clarity and code maintainability.</>,
+        ],
+        images: [],
+      },
+      {
         company: "Authenta (Phosphene.ai)",
-        timeframe: "March 2025 - Present",
+        timeframe: "March - December 2025",
         role: "Full Stack Developer Intern",
         achievements: [
-          <>Primary focus on backend development using Nest.js with modular architecture and dependency injection to build scalable services.</>,
-          <>Contributed to DevOps: authored Docker configurations and integrated LocalStack to emulate AWS, enabling portable, client-side deployments without cloud dependency.</>,
+          <>Built and scaled backend APIs using NestJS, applying modular architecture and dependency injection for maintainability.</>,
+          <>Designed cloud-agnostic infrastructure using Docker + LocalStack, enabling AWS-compatible deployments without vendor lock-in.</>,
+          <>Delivered portable environments that improved deployment consistency across heterogeneous client systems.</>,
         ],
         images: [],
       },
@@ -104,19 +116,8 @@ const about = {
         timeframe: "December 2024 - March 2025",
         role: "Full Stack Developer Intern",
         achievements: [
-          <>Worked on production-grade solutions, including a large-scale internal management system for Southern Railways of India to streamline operations, data, and workflows.</>,
-          <>Built an AI chatbot deployment platform to train on customer-provided sources and embed into websites, improving engagement and support efficiency.</>,
-        ],
-        images: [],
-      },
-      {
-        company: "Valeo",
-        timeframe: "July - August 2024",
-        role: "Summer Intern",
-        achievements: [
-          <>
-            Worked with the SOC team to analyze and respond to cybersecurity threats, gaining hands-on experience in network security and threat detection.
-          </>,
+          <>Entrusted with significant responsibilities on production-level projects, mirroring the role of a full-time developer.</>,
+          <>Developed and deployed full-stack solutions for various critical applications, notably contributing to a large-scale project for Southern Railways of India.</>,
         ],
         images: [],
       },
@@ -127,8 +128,8 @@ const about = {
     title: "Education",
     institutions: [
       {
-        name: "St. Joseph's Institute of Technology",
-        description: <>B.Tech in Artificial Intelligence and Data Science — Expected August 2026</>,
+        name: "St. Joseph's Institute of Technology Chennai",
+        description: <>B.Tech Artificial Intelligence and Data Science — Expected June 2026</>,
       },
     ],
   },
@@ -137,55 +138,16 @@ const about = {
     title: "Technical Skills",
     skills: [
       {
-        title: "Full Stack Development",
-        description: <>Next.js, React, TypeScript, Node.js, Nest.js, Express, PostgreSQL, MongoDB — Built robust frontends, secure backends and high-performance APIs</>,
+        title: "Languages & Frameworks",
+        description: <>JavaScript / TypeScript, Python, SQL / NoSQL, Nest.js, Next.js, React, Express.js, Node.js, Flask, FastAPI</>,
         // optional: leave the array empty if you don't want to display images
-        images: [
-          // {
-          //   src: "/images/projects/project-01/cover-02.jpg",
-          //   alt: "Project image",
-          //   width: 16,
-          //   height: 9,
-          // },
-          // {
-          //   src: "/images/projects/project-01/cover-03.jpg",
-          //   alt: "Project image",
-          //   width: 16,
-          //   height: 9,
-          // },
-        ],
-      },
-      {
-        title: "Cybersecurity & SOC",
-        description: <>SOC analysis, threat detection, incident triage. Exposure to ticketing workflows and response processes.</>,
-        // optional: leave the array empty if you don't want to display images
-        images: [
-          // {
-          //   src: "/images/projects/project-01/cover-02.jpg",
-          //   alt: "Project image",
-          //   width: 16,
-          //   height: 9,
-          // },
-          // {
-          //   src: "/images/projects/project-01/cover-03.jpg",
-          //   alt: "Project image",
-          //   width: 16,
-          //   height: 9,
-          // },
-        ],
+        images: [],
       },
       {
         title: "Backend & DevOps",
-        description: <>Docker, LocalStack, AWS, GCP — Containerized services and emulated cloud dependencies locally for portable deployments</>,
+        description: <>Docker, AWS, GCP, PostgreSQL, MongoDB, MySQL, Git/Github, Postman</>,
         // optional: leave the array empty if you don't want to display images
-        images: [
-          // {
-          //   src: "/images/projects/project-01/cover-04.jpg",
-          //   alt: "Project image",
-          //   width: 16,
-          //   height: 9,
-          // },
-        ],
+        images: [],
       },
     ],
   },
