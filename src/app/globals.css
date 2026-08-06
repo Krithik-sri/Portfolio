@@ -1,0 +1,319 @@
+@import "tailwindcss";
+
+@theme {
+  --color-base: #010203;
+  --color-base-raised: #0a0d0e;
+  --color-ink: #edeef0;
+  --color-ink-muted: #9ba1a6;
+  --color-ink-faint: #6e757c;
+
+  /* Spring/emerald green, not lime. A yellow-leaning green (#a8e162) reads olive
+     against near-black; this ramp is the GitHub dark-theme green family. */
+  --color-accent-100: #dcfce7;
+  --color-accent-200: #a7f3d0;
+  --color-accent-300: #4ade80;
+  --color-accent-400: #39d353;
+  --color-accent-500: #22c55e;
+  --color-accent-600: #16a34a;
+  --color-accent-700: #15803d;
+  --color-accent-800: #0e4429;
+  --color-accent-900: #052e16;
+
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-display: var(--font-display-face);
+}
+
+:root {
+  --heat-0: rgba(255, 255, 255, 0.04);
+  /* GitHub's own dark-theme contribution ramp — keeps the graph instantly
+     recognizable while matching the site's emerald accent. */
+  --heat-1: #0e4429;
+  --heat-2: #006d32;
+  --heat-3: #26a641;
+  --heat-4: #39d353;
+
+  --heat-glow-0: none;
+  --heat-glow-1: 0 0 4px rgba(14, 68, 41, 0.55);
+  --heat-glow-2: 0 0 7px rgba(0, 109, 50, 0.60);
+  --heat-glow-3: 0 0 10px rgba(38, 166, 65, 0.65);
+  --heat-glow-4: 0 0 15px rgba(57, 211, 83, 0.75);
+}
+
+body {
+  background: var(--color-base);
+  color: var(--color-ink);
+  font-family: var(--font-sans), sans-serif;
+}
+
+@layer components {
+  .glass {
+    position: relative;
+    /* Panels are NEUTRAL dark glass — no green wash painted onto them. Green enters
+       the page only as light emitted BY content: glowing text, icons, heatmap cells,
+       the pool of light under a GlassObject. Tinting the surface itself inverts that
+       relationship and reads as a green card rather than a lit black one. */
+    background: rgba(255, 255, 255, 0.032);
+    /* backdrop blur comes from Tailwind's backdrop-blur-xl/backdrop-saturate-150
+       utilities in Glass.tsx, NOT from here. Lightning CSS collapses a hand-written
+       backdrop-filter pair down to -webkit- only (Safari 16.4 is our lowest target),
+       and Chromium ignores that alias — so the blur silently vanishes. Tailwind
+       emits both forms behind @supports guards and survives the prefixer. */
+    border-radius: 20px;
+    /* Thickness. A slab of glass reads as thick when the TOP edge is lit and the
+       BOTTOM edge is dark — light falls in from above, the far wall stays in shadow.
+       The interior floor shadow + outer hairline sell the panel as an object with
+       a rim rather than a flat translucent rectangle. */
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.16),
+      inset 0 3px 7px -4px rgba(255, 255, 255, 0.14),
+      inset 0 -1px 0 rgba(0, 0, 0, 0.55),
+      inset 0 -20px 28px -26px rgba(0, 0, 0, 0.9),
+      inset 1px 0 0 rgba(120, 200, 255, 0.05),
+      inset -1px 0 0 rgba(255, 140, 120, 0.05),
+      0 1px 0 rgba(255, 255, 255, 0.04),
+      0 8px 16px -10px rgba(0, 0, 0, 0.9),
+      0 28px 56px -28px rgba(0, 0, 0, 0.95);
+    transition: box-shadow 600ms ease;
+  }
+
+  .glass::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(
+      160deg,
+      rgba(255, 255, 255, 0.42) 0%,
+      rgba(255, 255, 255, 0.1) 26%,
+      rgba(255, 255, 255, 0.02) 52%,
+      rgba(255, 255, 255, 0.16) 100%
+    );
+    -webkit-mask:
+      linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask:
+      linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0);
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+
+  .glass::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    background: radial-gradient(
+      340px circle at var(--mx, 50%) var(--my, 0%),
+      rgba(255, 255, 255, 0.1),
+      rgba(255, 255, 255, 0.04) 35%,
+      transparent 65%
+    );
+    opacity: 0;
+    transition: opacity 500ms ease;
+  }
+
+  .glass:hover::after {
+    opacity: 1;
+  }
+
+  .glass > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* A "featured" panel is just a slightly better-lit piece of glass — a brighter top
+     edge. No green tint, no coloured bloom. Emphasis comes from what's inside it. */
+  .glass.glow-panel {
+    background: rgba(255, 255, 255, 0.042);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.11),
+      inset 1px 0 0 rgba(120, 200, 255, 0.03),
+      inset -1px 0 0 rgba(255, 140, 120, 0.03),
+      0 20px 50px -20px rgba(0, 0, 0, 0.85);
+  }
+
+  .glass.glow-panel:hover {
+    background: rgba(255, 255, 255, 0.052);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.15),
+      inset 1px 0 0 rgba(120, 200, 255, 0.03),
+      inset -1px 0 0 rgba(255, 140, 120, 0.03),
+      0 20px 50px -20px rgba(0, 0, 0, 0.85);
+  }
+
+  .text-display {
+    font-family: var(--font-display), sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+  }
+
+  /* Themed scrollbar for the horizontal scrollers (heatmap, project row, nav strip).
+     The native bar renders as light grey chrome with stepper arrows and looks pasted
+     on over the dark glass. Firefox uses scrollbar-width/color; Chrome only gained
+     those in 121 and our floor is 111, so ::-webkit-scrollbar carries it there. */
+  .thin-scroll {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.14) transparent;
+  }
+
+  .thin-scroll::-webkit-scrollbar {
+    height: 6px;
+    width: 6px;
+  }
+
+  .thin-scroll::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .thin-scroll::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.14);
+    border-radius: 999px;
+  }
+
+  .thin-scroll::-webkit-scrollbar-thumb:hover {
+    background: rgba(74, 222, 128, 0.45);
+  }
+
+  /* Kills the stepper arrow buttons at each end — the most obviously "native" part. */
+  .thin-scroll::-webkit-scrollbar-button {
+    display: none;
+    width: 0;
+    height: 0;
+  }
+}
+
+/* Neon: a tight bright core with a short falloff. Radii are deliberately small —
+   wide radii read as blur/fog rather than a lit tube.
+   The glow is built on `currentColor`, so an element's own colour drives its glow
+   and nothing is locked to green. Set `text-accent-300`, `text-sky-400`, whatever
+   fits, and the halo follows. */
+@utility glow-text {
+  text-shadow:
+    0 0 2px rgba(255, 255, 255, 0.5),
+    0 0 6px currentColor,
+    0 0 14px currentColor;
+}
+
+@utility glow-text-soft {
+  text-shadow:
+    0 0 2px rgba(255, 255, 255, 0.5),
+    0 0 8px rgba(237, 238, 240, 0.3);
+}
+
+@utility glow-ring {
+  box-shadow:
+    0 0 0 1px rgba(74, 222, 128, 0.4),
+    0 0 6px rgba(74, 222, 128, 0.4),
+    0 0 14px rgba(74, 222, 128, 0.2),
+    inset 0 0 10px rgba(74, 222, 128, 0.1);
+}
+
+/* Neon tube outline for tiles: lit border + faint interior fill. */
+@utility neon-edge {
+  border-color: rgba(74, 222, 128, 0.35);
+  box-shadow:
+    0 0 5px rgba(74, 222, 128, 0.18),
+    inset 0 0 8px rgba(74, 222, 128, 0.07);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent-300);
+  outline-offset: 3px;
+}
+
+@keyframes drift-a {
+  from {
+    transform: translate(0%, 0%);
+  }
+  50% {
+    transform: translate(2%, 1.5%) scale(1.12);
+    opacity: 0.09;
+  }
+  to {
+    transform: translate(4%, 3%);
+  }
+}
+
+@keyframes drift-b {
+  from {
+    transform: translate(0%, 0%);
+  }
+  50% {
+    transform: translate(-2.5%, 2%) scale(1.12);
+    opacity: 0.06;
+  }
+  to {
+    transform: translate(-5%, 4%);
+  }
+}
+
+@keyframes drift-c {
+  from {
+    transform: translate(0%, 0%);
+  }
+  50% {
+    transform: translate(1.5%, -2%) scale(1.12);
+    opacity: 0.025;
+  }
+  to {
+    transform: translate(3%, -4%);
+  }
+}
+
+/* Drift and twinkle are split across two elements on purpose. Both want to animate
+   at different rates, but two animations on one element that both touch `opacity`
+   fight — last declared wins. So the wrapper owns transform (travel) and the inner
+   dot owns opacity (shimmer), letting a mote flicker at its own pace while it rises. */
+@keyframes particle-drift {
+  from {
+    transform: translate(0, 0);
+  }
+  to {
+    transform: translate(var(--mote-dx, 20px), var(--mote-dy, -60vh));
+  }
+}
+
+@keyframes particle-twinkle {
+  0%,
+  100% {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+  18% {
+    opacity: var(--mote-o, 0.25);
+    transform: scale(1);
+  }
+  46% {
+    opacity: calc(var(--mote-o, 0.25) * 0.25);
+    transform: scale(0.75);
+  }
+  74% {
+    opacity: var(--mote-o, 0.25);
+    transform: scale(1);
+  }
+}
+
+@keyframes glassobj-float {
+  from {
+    transform: translateY(0) rotate(-2deg);
+  }
+  to {
+    transform: translateY(-14px) rotate(2deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
